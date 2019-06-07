@@ -28,7 +28,7 @@ The payload of the MQTT messages should have the following structure:
 
 with:
   state is ON or OFF,
-  the brighness is a value between 0 and 255
+  the brighness is a value between 0 and 255, 
   the transition is a value in seconds
 
 ## Hardware
