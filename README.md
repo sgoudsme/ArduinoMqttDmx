@@ -15,7 +15,6 @@ Before uploading this software, a serial number need to be uploaded in EEPROM. T
  Fill in the ip, username and password of your broker in the code. 
 
 This bridge supports up to 50 DMX channels. Enlarging the buffer size is possible, but I had some unstabilities. 
-The max485 is connected to pin D1. 
 
 The mqtt topic the arduino connects to is 'D0000/X/command' where D0000 will be overwritten with the serial number, found in the EEPROM and x the channel that need to be changed.
 
@@ -32,4 +31,10 @@ with:
   the brighness is a value between 0 and 255
   the transition is a value in seconds
 
+## Hardware
+The hardware drawing is made in Kicad V5. It simply contains a footprint for an arduino and a MAX485. Also some extra pins are exposed, when I would need some small button. This is not used for the moment. 
+The MAX485 is connected to pin D1. 
 
+The plots are found in the folder "plots", and the PCB's are ordered at JLCPCB. 
+
+At the moment of writing, the PCB's are in production, so I haven't tested them. The circuit is made on a breadboard and should be working.
