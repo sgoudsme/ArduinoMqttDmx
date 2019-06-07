@@ -35,6 +35,7 @@ with:
 ## Hardware
 The hardware drawing is made in Kicad V5. It simply contains a footprint for an arduino and a MAX485. Also some extra pins are exposed, when I would need some small button. This is not used for the moment. 
 The MAX485 is connected to pin D1. 
+A regular ethernetshield (W5100) is also needed for the MQTT part.
 
 The plots are found in the folder "plots", and the PCB's are ordered at JLCPCB. 
 
