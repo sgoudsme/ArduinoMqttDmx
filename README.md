@@ -11,8 +11,9 @@ The sofware can be found in the folder 'Arduino/Dmx'
 Needed library:
  - pubsubclient
 
-Before uploading this software, a serial number need to be uploaded in EEPROM. This way of programming gives every arduino a fixed number, without the constant need of changing the software. 
- Fill in the ip, username and password of your broker in the code. 
+Before uploading this software, a serial number need to be uploaded in EEPROM. This way of programming gives every arduino a fixed number, without the constant need of changing the software. You can find the way of programming the serial number in my other repository: https://github.com/sgoudsme/Write-EEPROM-numbers.
+
+Fill in the ip, username and password of your broker in the code. 
 
 This bridge supports up to 50 DMX channels. Enlarging the buffer size is possible, but I had some unstabilities. 
 
