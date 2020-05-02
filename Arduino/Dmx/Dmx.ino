@@ -21,7 +21,7 @@ struct dmxval {
   int transition = 0;
 };
 #if DEBUG
-const char* mqtt_server = "192.168.1.100";
+const char* mqtt_server = "192.168.2.1";
 #else
 const char* mqtt_server = "192.168.2.1";
 #endif
@@ -136,11 +136,17 @@ void reconnect() {
   // Loop until we're reconnected
   if (!client.connected()) {
     // Attempt to connect
-    //Serial.println("Trying to connect...");
-    if (client.connect(SwitchSernum, "username", "password")) { //clientId
+    #if DEBUG
+    Serial.println("Trying to connect...");
+    #endif
+    if (client.connect(SwitchSernum, "sibrecht", "iPWxQfnTJ7h2DHEbP12o0X5NDZLj")) { //clientId
       //Serial.println(inTopic);
       client.subscribe(inTopic);
-      //Serial.println("Connected");
+      #if DEBUG
+      Serial.println("Connected");
+      #else
+      client.publish("onlinedevice", SwitchSernum);
+      #endif
     }
   }
 }
@@ -167,19 +173,13 @@ void setup() {
   };
 
   IPAddress nonValidIp(0, 0, 0, 0);
-#if DEBUG
-  IPAddress ip(192, 168, 1, 30);
-#endif
 
   do
   {
     delay(5);
-#if DEBUG
-    Ethernet.begin(mac, ip);
-    Serial.println(Ethernet.localIP());
-#else
+
     Ethernet.begin(mac);
-#endif
+
     delay(5);
   }
   while (Ethernet.localIP() == nonValidIp);
